@@ -26,5 +26,5 @@ def show_timeline():
 		get_db().cursor().execute(sql, vals)
 	context = {}
 	posts1 = get_db().cursor().execute('''SELECT * FROM posts''').fetchall()
-	context["posts"] = posts1.copy()
+	context["posts"] = posts1
 	return flask.jsonify(**context)
