@@ -32,7 +32,7 @@ export default class Home extends React.Component {
   };
 
   componentDidMount() {
-    fetch('http:/192.168.1.37:8000/')
+    fetch('http://18.221.249.206/')
       .then((response) => {
         if (!response.ok) throw Error(response.statusText);
         return response.json();
@@ -47,7 +47,7 @@ export default class Home extends React.Component {
 
   makeNewPost() {
     const input = this.state.newPostText;
-    fetch('http://192.168.1.37:8000/', {
+    fetch('http://18.221.249.206/', {
       headers: { 'Content-Type': 'application/json' },
       method: 'POST',
       body: JSON.stringify({ text: input }),
